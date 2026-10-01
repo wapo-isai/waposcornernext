@@ -23,7 +23,7 @@ export default async function CaseStudyPage({params}: CaseStudyPageProps) {
       <header>
         <div className="container nav-inner">
           <Link className="brand" href="/">
-            Alex Mercer
+            Isai Martinez
           </Link>
           <nav aria-label="Primary">
             <div className="nav-links">
@@ -367,7 +367,7 @@ export default async function CaseStudyPage({params}: CaseStudyPageProps) {
         <div className="container">
           <div className="footer-top">
             <div>
-              <p className="footer-name">Alex Mercer</p>
+              <p className="footer-name">Isai Martinez</p>
               <p className="footer-note">Designing systems that last.</p>
             </div>
             <nav aria-label="Footer navigation">

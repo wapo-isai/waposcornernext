@@ -23,7 +23,7 @@ export default async function BlogArticlePage({params}: BlogArticlePageProps) {
       <header>
         <div className="container nav-inner">
           <Link className="brand" href="/">
-            Alex Mercer
+            Isai Martinez
           </Link>
           <nav aria-label="Primary">
             <div className="nav-links">
@@ -168,7 +168,7 @@ export default async function BlogArticlePage({params}: BlogArticlePageProps) {
               />
             </div>
             <div>
-              <p className="author-name">Alex Mercer</p>
+              <p className="author-name">Isai Martinez</p>
               <p className="author-bio">
                 Senior backend and cloud engineer focused on resilient platform
                 architecture, operability, and sustainable engineering velocity.
@@ -187,7 +187,7 @@ export default async function BlogArticlePage({params}: BlogArticlePageProps) {
         <div className="container">
           <div className="footer-top">
             <div>
-              <p className="footer-name">Alex Mercer</p>
+              <p className="footer-name">Isai Martinez</p>
               <p className="footer-note">Designing systems that last.</p>
             </div>
             <nav aria-label="Footer navigation">

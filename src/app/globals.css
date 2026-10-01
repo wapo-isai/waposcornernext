@@ -973,3 +973,670 @@ figcaption {
     padding-right: 1.25rem;
   }
 }
+
+/* ─────────────────────────────────────────────
+   ARTICLE: Hybrid Search
+   Add these rules to globals.css (or import
+   this file in the article page component).
+   All selectors are scoped under .blog-page
+   so nothing bleeds into other pages.
+───────────────────────────────────────────── */
+
+/* ── Back link ── */
+.blog-page .article-back {
+  display: inline-block;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  transition: color 0.2s ease;
+}
+.blog-page .article-back:hover {
+  color: var(--accent);
+}
+
+/* ── Eyebrow tag row ── */
+.blog-page .article-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.blog-page .eyebrow-tag {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.blog-page .eyebrow-sep {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+/* ── Two-path ingestion cards ── */
+.blog-page .two-path-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0 40px;
+}
+.blog-page .path-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px 28px;
+}
+.blog-page .path-label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.blog-page .path-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ── Architecture diagram ── */
+.blog-page .arch-diagram {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 32px;
+  margin: 32px 0 40px;
+  overflow-x: auto;
+}
+.blog-page .arch-stage {
+  margin-bottom: 28px;
+}
+.blog-page .arch-stage:last-child {
+  margin-bottom: 0;
+}
+.blog-page .arch-stage-label {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.blog-page .arch-flow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+.blog-page .arch-flow--linear {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.blog-page .arch-fork {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 22px;
+}
+.blog-page .arch-fork::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  bottom: 25%;
+  border-left: 1px solid var(--accent-muted);
+}
+
+.blog-page .arch-branch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.blog-page .arch-branch::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  width: 22px;
+  border-top: 1px solid var(--accent-muted);
+}
+
+.blog-page .arch-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  min-width: 90px;
+  text-align: center;
+  line-height: 1.3;
+}
+.blog-page .arch-node--source {
+  border-color: var(--accent-muted);
+  color: var(--text-secondary);
+}
+.blog-page .arch-node--store {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.blog-page .arch-node--hybrid {
+  border-color: var(--accent-muted);
+}
+.blog-page .arch-node-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-top: 3px;
+}
+.blog-page .arch-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Score comparison block ── */
+.blog-page .score-compare {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 32px;
+  margin: 32px 0;
+}
+.blog-page .score-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.blog-page .score-row:last-of-type {
+  border-bottom: none;
+}
+.blog-page .score-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.blog-page .score-value {
+  font-family: "Courier New", monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.blog-page .score-value--low {
+  color: var(--text-primary);
+}
+.blog-page .score-value--high {
+  color: var(--accent);
+}
+.blog-page .score-note {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* ── Formula block ── */
+.blog-page .formula-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  padding: 20px 28px;
+  margin: 28px 0;
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: var(--text-primary);
+  overflow-x: auto;
+  flex-wrap: wrap;
+}
+.blog-page .formula-block--wide {
+  gap: 14px;
+}
+.blog-page .formula-lhs {
+  font-weight: 600;
+}
+.blog-page .formula-sub {
+  font-size: 0.7em;
+  vertical-align: sub;
+  color: var(--accent);
+}
+.blog-page .formula-eq {
+  color: var(--text-muted);
+}
+.blog-page .formula-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.blog-page .formula-num {
+  border-bottom: 1px solid var(--text-secondary);
+  padding-bottom: 2px;
+  font-size: 0.9em;
+}
+.blog-page .formula-den {
+  font-size: 0.9em;
+}
+.blog-page .formula-term {
+  color: var(--text-primary);
+}
+.blog-page .formula-op {
+  color: var(--text-muted);
+}
+
+/* ── Alpha slider table ── */
+.blog-page .alpha-table-wrap {
+  margin: 32px 0 40px;
+}
+.blog-page .alpha-track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.blog-page .alpha-pole {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.blog-page .alpha-bar {
+  flex: 1;
+  position: relative;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent-muted), var(--accent));
+  border-radius: 2px;
+}
+.blog-page .alpha-marker {
+  position: absolute;
+  top: -20px;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: "Courier New", monospace;
+}
+.blog-page .alpha-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.blog-page .alpha-row {
+  display: grid;
+  grid-template-columns: 80px 120px 100px 1fr;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.blog-page .alpha-row:last-child {
+  border-bottom: none;
+}
+.blog-page .alpha-val {
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+.blog-page .alpha-sem,
+.blog-page .alpha-bm {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+.blog-page .alpha-interp {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+/* ── Chunk calculation block ── */
+.blog-page .chunk-calc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 32px;
+  margin: 28px 0 40px;
+}
+.blog-page .chunk-scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.blog-page .chunk-col {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.blog-page .chunk-col-head {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+.blog-page .chunk-score-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+.blog-page .chunk-score-row:last-child {
+  border-bottom: none;
+}
+.blog-page .chunk-score-row strong {
+  color: var(--text-primary);
+  font-family: "Courier New", monospace;
+}
+.blog-page .chunk-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.blog-page .chunk-result-block {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.blog-page .chunk-result-alpha {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.blog-page .chunk-result-math {
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.blog-page .chunk-result-math strong {
+  color: var(--text-primary);
+}
+.blog-page .chunk-result-winner {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+.blog-page .chunk-caption {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── Evaluation tables ── */
+.blog-page .eval-table-wrap {
+  overflow-x: auto;
+  margin: 24px 0 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.blog-page .eval-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.blog-page .eval-table th {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.blog-page .eval-table td {
+  padding: 12px 16px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.blog-page .eval-table tr:last-child td {
+  border-bottom: none;
+}
+.blog-page .eval-table--wide td,
+.blog-page .eval-table--wide th {
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+.blog-page .eval-table--wide td:first-child {
+  white-space: normal;
+}
+.blog-page .table-row--highlight td {
+  background: rgba(123, 158, 168, 0.05);
+}
+
+/* Result badges */
+.blog-page .result-hit {
+  color: #6aaa82;
+  font-weight: 500;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.blog-page .result-warn {
+  color: #b5945a;
+  font-weight: 500;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.blog-page .result-miss {
+  color: #8a4a4a;
+  font-weight: 500;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+/* ── Key finding callout ── */
+.blog-page .finding-callout {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  padding: 24px 28px;
+  margin: 32px 0;
+}
+.blog-page .finding-label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.blog-page .finding-callout p:last-child {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── top-k recall grid ── */
+.blog-page .topk-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 24px 0 32px;
+}
+.blog-page .topk-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.blog-page .topk-row:last-child {
+  border-bottom: none;
+}
+.blog-page .topk-row--pass {
+  background: rgba(106, 170, 130, 0.05);
+}
+.blog-page .topk-row--fail {
+  background: var(--bg-card);
+}
+.blog-page .topk-k {
+  font-family: "Courier New", monospace;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+.blog-page .topk-result {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* ── Summary findings grid ── */
+.blog-page .findings-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 28px 0 48px;
+}
+.blog-page .finding-card {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.blog-page .finding-card:last-child {
+  border-bottom: none;
+}
+.blog-page .finding-card-finding {
+  color: var(--text-secondary);
+  margin: 0;
+}
+.blog-page .finding-card-arrow {
+  color: var(--accent);
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+}
+.blog-page .finding-card-implication {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ── Retrospective items ── */
+.blog-page .retro-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 24px 0 48px;
+}
+.blog-page .retro-item {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--border);
+}
+.blog-page .retro-item:last-child {
+  border-bottom: none;
+}
+.blog-page .retro-item-title {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.blog-page .retro-item p:last-child {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .blog-page .two-path-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-page .chunk-scores,
+  .blog-page .chunk-results {
+    grid-template-columns: 1fr;
+  }
+  .blog-page .finding-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .blog-page .finding-card-arrow {
+    display: none;
+  }
+  .blog-page .alpha-row {
+    grid-template-columns: 70px 100px 1fr;
+  }
+  .blog-page .alpha-bm {
+    display: none;
+  }
+  .blog-page .arch-flow,
+  .blog-page .arch-branch {
+    flex-wrap: wrap;
+  }
+}
+
+/* Give the long title room without widening the prose. */
+.blog-page .article-header .narrow {
+  max-width: 1000px;
+}
+
+.blog-page .article-header h1 {
+  max-width: 900px;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+}
+
+/* Let the diagram extend beyond the article's text column. */
+.blog-page .arch-diagram {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1080px, calc(100vw - 4rem));
+  max-width: none;
+}
+
+/* Keep the query pipeline connected on desktop. */
+.blog-page .arch-flow--linear {
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 700px) {
+  .blog-page .arch-diagram {
+    width: calc(100vw - 2rem);
+    padding: 20px;
+  }
+
+  .blog-page .arch-flow--linear {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .blog-page .arch-flow--linear .arch-arrow {
+    align-self: center;
+    transform: rotate(90deg);
+  }
+}

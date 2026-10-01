@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <header>
         <div className="container nav-inner">
-          <div className="brand">Alex Mercer</div>
+          <div className="brand">Isai Martinez</div>
           <nav aria-label="Primary">
             <div className="nav-links">
               <a href="#work">Work</a>
@@ -25,23 +25,19 @@ export default function Home() {
         >
           <div className="container">
             <div className="hero-content">
-              <p className="section-label">
-                Backend &amp; Cloud Infrastructure
-              </p>
-              <h1 id="hero-title">
-                Systems built for scale. Teams built to ship.
-              </h1>
+              <p className="section-label">ENGINEERING • ARCHITECTURE • AI</p>
+              <h1 id="hero-title">Building systems. Sharing what I learn.</h1>
               <p className="hero-copy">
-                I design distributed backend systems and cloud infrastructure
-                that handle real load and help engineering teams move faster
-                without accumulating the debt that slows them down later.
+                Exploring backend engineering, cloud systems, distributed
+                architecture, and AI through projects, technical writing, and
+                practical experience.
               </p>
               <div className="hero-links">
                 <a className="btn-outline" href="#work">
-                  See My Work
+                  Explore Projects
                 </a>
                 <a className="text-link-muted" href="#thinking">
-                  Read My Thinking &rarr;
+                  Read Articles &rarr;
                 </a>
               </div>
             </div>
@@ -60,6 +56,25 @@ export default function Home() {
             </p>
 
             <div className="work-grid">
+              <article className="card thinking-card">
+                <p className="article-date">September 30, 2025</p>
+                <h3>
+                  Why I Built a Hybrid Search Document Assistant — and What the
+                  Data Taught Me
+                </h3>
+                <p>
+                  I combined BM25 keyword search and semantic vector retrieval
+                  into a single document assistant, then ran structured
+                  experiments to find out which approach actually works better —
+                  and when.
+                </p>
+                <Link
+                  className="article-link"
+                  href="/blog/hybrid-search-document-assistant"
+                >
+                  Read more &rarr;
+                </Link>
+              </article>
               <article className="card case-card">
                 <div className="case-content">
                   <p className="case-label">Distributed Systems</p>
@@ -180,10 +195,10 @@ export default function Home() {
           aria-labelledby="thinking-title"
         >
           <div className="container">
-            <h2 id="thinking-title">Thinking</h2>
+            <h2 id="thinking-title">Articles</h2>
             <p className="section-subheading">
-              Writing on systems design, engineering tradeoffs, and building
-              teams.
+              Writing on systems design, engineering tradeoffs, and my
+              learnings.
             </p>
 
             <div className="thinking-grid">
@@ -256,24 +271,25 @@ export default function Home() {
                 <p className="section-label">Background</p>
                 <h2 id="about-title">About Me</h2>
                 <p>
-                  I care about systems that degrade gracefully and teams that do
-                  not burn out maintaining them. Reliability is not just an
-                  uptime metric to me, it is a product of clear ownership,
-                  well-chosen abstractions, and architecture that acknowledges
-                  failure from day one.
+                  I believe great software is more than code that works—it's
+                  software that's understandable, resilient, and designed to
+                  grow alongside the people who use it. That's the kind of
+                  engineering I strive for, and it's the perspective that shapes
+                  everything I build.
                 </p>
                 <p>
-                  Over the years, I have worked across product engineering and
-                  platform teams, helping organizations modernize core services
-                  while keeping delivery velocity intact. I am most energized at
-                  the intersection of deep technical constraints and practical
-                  decisions that unblock people.
+                  This site is my engineering notebook. It's where I share
+                  projects, write about backend systems, cloud architecture, AI,
+                  and distributed systems, and document the lessons I learn
+                  along the way. My hope is that these articles are as useful to
+                  other engineers as they are to me while writing them.
                 </p>
                 <p>
-                  Outside work, I spend time reading long-form history, hiking
-                  early trails, and mentoring engineers navigating their first
-                  leadership transitions. I also enjoy refining analog habits
-                  that balance the pace of always-on digital work.
+                  Away from the keyboard, I'm usually reading a novel,
+                  practicing guitar, or out dancing. Those interests constantly
+                  remind me that engineering isn't just about technology, it's
+                  about curiosity, creativity, and learning how people and
+                  systems work.
                 </p>
 
                 <div className="cert-row" aria-label="Certifications">
@@ -326,14 +342,17 @@ export default function Home() {
                 problem, or building a team that needs to move faster, I&apos;d
                 like to hear about it.
               </p>
-              <a className="contact-link" href="mailto:me@example.com">
-                me@example.com
+              <a
+                className="contact-link"
+                href="mailto:isaimartinez52@gmail.com"
+              >
+                isaimartinez52@gmail.com
               </a>
               <a
                 className="contact-link"
-                href="https://linkedin.com/in/placeholder"
+                href="https://linkedin.com/in/isai-martinez/"
               >
-                linkedin.com/in/placeholder
+                http://linkedin.com/in/isai-martinez/
               </a>
             </div>
           </div>
@@ -344,7 +363,7 @@ export default function Home() {
         <div className="container">
           <div className="footer-top">
             <div>
-              <p className="footer-name">Alex Mercer</p>
+              <p className="footer-name">Isai Martinez</p>
               <p className="footer-note">Designing systems that last.</p>
             </div>
 
